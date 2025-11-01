@@ -1,0 +1,22 @@
+class Solution {
+    public int[] numberOfLines(int[] widths, String s) {
+        int count=0;
+        int widthsSum=0;
+        int ind=0;
+        
+            for(char c:s.toCharArray()){
+                    widthsSum+=widths[c-'a'];
+                    if(widthsSum>100){
+                        widthsSum=widths[c-'a'];
+                        count++;
+                    }
+
+        }
+        if(widthsSum<=100){
+            count ++;
+        }
+        int []a={count,widthsSum};
+        return  a;
+        
+    }
+}
