@@ -1,0 +1,45 @@
+// class Solution {
+//     public int[] fairCandySwap(int[] aliceSizes, int[] bobSizes) {
+//         int totalally=0;
+//         int totalbob=0;
+//         for(int i: aliceSizes){
+//             totalally+=i;
+//         }
+//         for(int i: bobSizes){
+//             totalbob+=i;
+//         }
+//         int ans[]=new int[2];
+//         for(int i:aliceSizes){
+//             for(int j:bobSizes){
+//                 if(totalally-i+j==totalbob+i-j){
+//                     return new int[] {i,j};
+//                 }
+//             }
+//         }
+        
+//         return new int[0];
+//     }
+// }
+
+import java.util.*;
+
+class Solution {
+    public int[] fairCandySwap(int[] aliceSizes, int[] bobSizes) {
+        int sumA = 0, sumB = 0;
+        for (int a : aliceSizes) sumA += a;
+        for (int b : bobSizes) sumB += b;
+
+        int diff = (sumA - sumB) / 2;
+        Set<Integer> setA = new HashSet<>();
+        for (int a : aliceSizes) setA.add(a);
+
+        for (int b : bobSizes) {
+            int target = b + diff;
+            if (setA.contains(target)) {
+                return new int[]{target, b};
+            }
+        }
+
+        return new int[0];
+    }
+}
