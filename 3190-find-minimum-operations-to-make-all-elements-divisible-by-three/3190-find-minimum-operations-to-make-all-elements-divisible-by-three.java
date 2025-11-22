@@ -1,12 +1,14 @@
 class Solution {
     public int minimumOperations(int[] nums) {
-        int o1=0;
-        for(int i:nums){
-            if(i%3!=0){
-                o1++;
-            }
+        int sum =0;
+        for(int i=0;i<nums.length;i++){
+           if(nums[i] %3 ==0){
+            continue;
+           } else{
+            sum++;
+           }
         }
-        return o1;
         
+        return sum;
     }
 }
