@@ -1,14 +1,13 @@
 class Solution {
     public int mirrorDistance(int n) {
-        int a=n;
-        int b=0;
-        while(a!=0){
-            b=b*10+a%10;
-            System.out.println(b);
-            a/=10;
-            
+        int a=0;
+        int b=n;
+        while(n!=0){
+            a*=10;
+            a+=n%10;
+            n/=10;
         }
-        return Math.abs(b-n);
+        return Math.abs(b-a);
         
     }
 }
