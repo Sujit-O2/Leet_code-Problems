@@ -15,7 +15,6 @@ class Solution {
             max = s.replace(ch, '9');
         }
 
-        // Minimum
         char first = s.charAt(0);
         String min = s.replace(first, '0');
 
